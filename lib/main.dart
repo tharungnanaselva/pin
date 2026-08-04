@@ -120,6 +120,14 @@ class PINState extends State<PIN> {
 
   void convert() {
     try {
+      if(nameInput.text.isEmpty && input.text.isEmpty){
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Please enter a name or number!'),
+          ),
+        );
+        return;
+      }
       setState(() {
         r = '';
         result = '';
