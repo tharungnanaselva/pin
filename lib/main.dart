@@ -137,7 +137,7 @@ class PINState extends State<PIN> {
       if (name.isNotEmpty) {
         input.text = '';
         for (var i = 0; i < name.length; i++) {
-          input.text += alphabetNumbers.keys.contains(name[i].toUpperCase()) ? alphabetNumbers[name[i].toUpperCase()].toString() : '';
+          input.text += alphabetNumbers.keys.contains(name[i].toUpperCase()) ? alphabetNumbers[name[i].toUpperCase()].toString() : num.tryParse(name[i]) != null ? name[i] : '';
         }
       }
 
